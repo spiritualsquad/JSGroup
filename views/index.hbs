@@ -1,0 +1,11 @@
+<h2>Stripe Checkout</h2>
+<button id="checkout">Pay $50</button>
+
+<script>
+document.getElementById('checkout').addEventListener('click', async () => {
+    const res = await fetch('/checkout', { method: 'POST' });
+    const { url } = await res.json();
+    window.location.href = url;
+});
+
+</script>
